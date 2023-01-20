@@ -29,32 +29,29 @@
 <div class="container">
     <div class="row col-md-12 col-md-offset-2 custyle mx-auto">
         <h1 class="mx-auto"> Russia Losses</h1>
-    <table class="table table-striped custab">
+        <table class="table table-striped custab">
 
-
-    <td class="text-center"><a class='btn btn-success btn-xs' href="#"><span class="glyphicon glyphicon-create"></span> Create</a> <a class='btn btn-primary btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-
+          <thead>
+              <tr>
+                  <th>Equipment</th>
+                  <th>Model</th>
+                  <th>Sub_Model</th>
+                  <th>Manufacturer</th>
+                  <th>Losses_Total</th>
+                  <th><a class='btn btn-success btn-xs' href="/create-russia/"><span class="glyphicon glyphicon-create"></span> Create</a> </th>
+              </tr>
+          </thead>
       
-    <thead>
-        <tr>
-            <th>Equipment</th>
-            <th>Model</th>
-            <th>Sub_Model</th>
-            <th>Manufacturer</th>
-            <th>Losses_Total</th>
-
-        </tr>
-    </thead>
-      
-      <% russias.forEach(function(russia){ %>
-        <tr>
-          <td><%=  russia.equipment  %></td>
-          <td><%=  russia.model  %></td>
-          <td><%=  russia.losses_total  %></td>
-          <td><%=  russia.captured  %></td>
-          <td><%=  russia.destroyed  %></td>
-        </tr>
-      <% }); %>
+            <% russias.forEach(function(russia){ %>
+              <tr>
+                <td><%=  russia.equipment  %></td>
+                <td><%=  russia.model  %></td>
+                <td><%=  russia.losses_total  %></td>
+                <td><%=  russia.captured  %></td>
+                <td><%=  russia.destroyed  %></td>
+                <td class="text-center"><a class='btn btn-primary btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="/russias/delete/<%= russia.id %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+              </tr>
+            <% }); %>
           
     </table>
     </div>

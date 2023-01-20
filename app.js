@@ -1,6 +1,7 @@
 require("dotenv").config();
 const mongoose = require("mongoose");
 const express = require("express");
+const bodyParser = require("body-parser")
 const path = require("path");
 const Russia = require("./models/Russia")
 const Ukraine = require("./models/Ukraine")
@@ -32,6 +33,9 @@ mongoose.connection.on("error", (err) => {
 });
 
 app.use(express.static(path.join(__dirname, "public")));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false }));
+
 
 app.get("/", (req, res) => {
   res.render("index");
@@ -39,8 +43,21 @@ app.get("/", (req, res) => {
 
 //---------------------------------------
 
+app.post("/create-russia", russiaController.create )
+app.get("/create-russia", (req, res) => {
+  res.render("create-russia");
+})
+
+app.post("/create-ukraine", ukraineController.create )
+app.get("/create-ukraine", (req, res) => {
+  res.render("create-ukraine");
+})
+
 app.get("/russias", russiaController.list);
 app.get("/ukraines", ukraineController.list);
+
+app.get("/russias/delete/:id", russiaController.delete);
+app.get("/ukraines/delete/:id", ukraineController.delete);
 
 //---------------------------------------
 

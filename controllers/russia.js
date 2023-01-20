@@ -13,8 +13,22 @@ exports.delete = async (req, res) => {
     const id = req.params.id;
     try {
         await Russia.findByIdAndDelete(id)
+        res.redirect("/russias");
     } catch (e) {
         res.status(404).send({message: "could not delete data"})
         res.redirect("/russias")
     }
 }
+
+exports.create = async (req, res) => {
+
+    let russia = new Russia({name: req.body.name, model: req.body.model});
+
+    try {
+        await russia.save();
+        res.redirect("/russias/?message=russia loss has been created");
+    } catch (e) {
+        return res.status(400).send({message: JSON.parse(e)})
+    }
+
+  };
