@@ -2,9 +2,8 @@
   "name": "databases-starter-project",
   "version": "1.0.0",
   "description": "",
- 
+  "main/views": "index.ejs",
   "scripts": {
-    "start": "node index.ejs",
     "dev": "nodemon app.js",
     "queryRunner": "nodemon query-runner.js"
   },
