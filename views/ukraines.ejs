@@ -38,7 +38,7 @@
                 <th>Total Losses</th>
                 <th>Captured</th>
                 <th>Destroyed</th>
-                  <th><a class='btn btn-success btn-xs' href="/create-russia/"><span class="glyphicon glyphicon-create"></span> Create</a> </th>
+                  <th><a class='btn btn-success btn-xs' href="/create-ukraine/"><span class="glyphicon glyphicon-create"></span> Create</a> </th>
               </tr>
           </thead>
             
@@ -49,7 +49,7 @@
                 <td><%=  ukraine.losses_total  %></td>
                 <td><%=  ukraine.captured  %></td>
                 <td><%=  ukraine.destroyed  %></td>
-                <td class="text-center"><a class='btn btn-primary btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="/ukraines/delete/<%= ukraine.id %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                <td class="text-center"><a class='btn btn-primary btn-xs' href="/ukraines/update/<%= ukraine.id %>"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="/ukraines/delete/<%= ukraine.id %>" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
               </tr>
             <% }); %>
                 

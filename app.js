@@ -59,6 +59,16 @@ app.get("/ukraines", ukraineController.list);
 app.get("/russias/delete/:id", russiaController.delete);
 app.get("/ukraines/delete/:id", ukraineController.delete);
 
+
+
+app.get("/russias/update/:id", russiaController.edit);
+
+app.post("/russias/update/:id", russiaController.update);
+
+app.get("/ukraines/update/:id", ukraineController.edit);
+
+app.post("/ukraines/update/:id", ukraineController.update);
+
 //---------------------------------------
 
 app.listen(WEB_PORT, () => {

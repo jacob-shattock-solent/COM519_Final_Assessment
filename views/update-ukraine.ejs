@@ -29,48 +29,52 @@
 
 <h1 class="text-center">Create Ukraine Loss</h1>
 
-<form method="POST" action="/create-ukraine">
+<form method="POST">
 
-  <input
-  type="text"
-  class="form-control"
-  id="name"
-  placeholder="Enter Equipment"
-  name="equipment"
-/>
+    <input
+      value="<%= ukraine.equipment%>"
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Enter Equipment"
+      name="equipment"
+    />
 
-<input
-  type="text"
-  class="form-control"
-  id="name"
-  placeholder="Enter Model"
-  name="model"
-/>
+    <input
+      value="<%= ukraine.model%>"
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Enter Model"
+      name="model"
+    />
 
-<input
-  type="text"
-  class="form-control"
-  id="name"
-  placeholder="Enter Total Losses"
-  name="losses_total"
-/>
+    <input
+      value="<%= ukraine.losses_total%>"
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Enter Total Losses"
+      name="losses_total"
+    />
 
-<input
-  type="text"
-  class="form-control"
-  id="name"
-  placeholder="Enter Captured"
-  name="captured"
-/>
+    <input
+      value="<%= ukraine.captured%>"
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Enter Captured"
+      name="captured"
+    />
 
-<input
-  type="text"
-  class="form-control"
-  id="name"
-  placeholder="Enter Destroyed"
-  name="destroyed"
-/>
-
+    <input
+      value="<%= ukraine.destroyed%>"
+      type="text"
+      class="form-control"
+      id="name"
+      placeholder="Enter Destroyed"
+      name="destroyed"
+    />
 
     <button type="submit" class="btn btn-primary">Submit</button>
 

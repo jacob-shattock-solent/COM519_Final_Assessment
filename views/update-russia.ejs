@@ -29,9 +29,10 @@
 
 <h1 class="text-center">Create Russian Loss</h1>
 
-<form method="POST" action="/create-russia">
+<form method="POST">
 
     <input
+      value="<%= russia.equipment%>"
       type="text"
       class="form-control"
       id="name"
@@ -40,6 +41,7 @@
     />
 
     <input
+      value="<%= russia.model%>"
       type="text"
       class="form-control"
       id="name"
@@ -48,6 +50,7 @@
     />
 
     <input
+      value="<%= russia.losses_total%>"
       type="text"
       class="form-control"
       id="name"
@@ -56,6 +59,7 @@
     />
 
     <input
+      value="<%= russia.captured%>"
       type="text"
       class="form-control"
       id="name"
@@ -64,6 +68,7 @@
     />
 
     <input
+      value="<%= russia.destroyed%>"
       type="text"
       class="form-control"
       id="name"

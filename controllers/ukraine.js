@@ -20,9 +20,32 @@ exports.delete = async (req, res) => {
     }
 }
 
+exports.edit = async (req, res) => {
+    const id = req.params.id;
+    try {
+        const ukraine = await Ukraine.findById(id)
+        res.render("update-ukraine", {ukraine: ukraine, errors: {}});
+    } catch (e) {
+        res.status(404).send({message: "could not edit data"})
+        res.redirect("/ukraines")
+    }
+}
+
+exports.update = async (req, res) => {
+    const id = req.params.id;
+    try {
+        const ukraine = await Ukraine.findById(id);
+        await Ukraine.updateOne({_id: id}, req.body);
+        res.redirect("/ukraines")
+    } catch (e) {
+        res.status(404).send({message: "could not update data"})
+        res.redirect("/ukraines")
+    }
+}
+
 exports.create = async (req, res) => {
 
-    let ukraine = new Ukraine({name: req.body.name, model: req.body.model});
+    let ukraine = new Ukraine({equipment: req.body.equipment, model: req.body.model, losses_total: req.body.losses_total, captured: req.body.captured, destroyed: req.body.destroyed});
 
     try {
         await ukraine.save();
