@@ -5,7 +5,15 @@ const path = require("path");
 const Russia = require("./models/Russia")
 const Ukraine = require("./models/Ukraine")
 const app = express();
+
+//controllers
+
+const russiaController = require("./controllers/russia");
+const ukraineController = require("./controllers/ukraine");
+
 app.set("view engine", "ejs");
+
+
 
 /**
  * notice above we are using dotenv. We can now pull the values from our environment
@@ -29,19 +37,12 @@ app.get("/", (req, res) => {
   res.render("index");
 });
 
-// app.get("/tasters", async (req, res) => {
-//   res.render("tasters");
-// });
+//---------------------------------------
 
-app.get("/russias", async (req, res) => {
-  const russias = await Russia.find({});
-  console.log(russias)
-  res.render("russias");
-});
+app.get("/russias", russiaController.list);
+app.get("/ukraines", ukraineController.list);
 
-app.get("/ukraines", async (req, res) => {
-  res.render("ukraines");
-});
+//---------------------------------------
 
 app.listen(WEB_PORT, () => {
   console.log(`Example app listening at http://localhost:${WEB_PORT}`);

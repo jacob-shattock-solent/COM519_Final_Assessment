@@ -29,27 +29,34 @@
 <div class="container">
     <div class="row col-md-12 col-md-offset-2 custyle mx-auto">
         <h1 class="mx-auto"> Ukraine Losses</h1>
-    <table class="table table-striped custab">
-    <thead>
-        <tr>
-            <th>Equipment</th>
-            <th>Model</th>
-            <th>Losses_Total</th>
-            <th>Captured</th>
-            <th>Destroyed</th>
+        <table class="table table-striped custab">
 
-        </tr>
-    </thead>
-            <tr>
-                <td>Tanks</td>
-                <td>T-62 Obr. 1967</td>
-                <td>1</td>
-                <td>1</td>
-                <td></td>
-                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-            </tr>
-          
-    </table>
+      
+          <td class="text-center"><a class='btn btn-success btn-xs' href="#"><span class="glyphicon glyphicon-create"></span> Create</a> <a class='btn btn-primary btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+      
+            
+          <thead>
+              <tr>
+                  <th>Equipment</th>
+                  <th>Model</th>
+                  <th>Sub_Model</th>
+                  <th>Manufacturer</th>
+                  <th>Losses_Total</th>
+      
+              </tr>
+          </thead>
+            
+            <% ukraines.forEach(function(ukraine){ %>
+              <tr>
+                <td><%=  ukraine.equipment  %></td>
+                <td><%=  ukraine.model  %></td>
+                <td><%=  ukraine.losses_total  %></td>
+                <td><%=  ukraine.captured  %></td>
+                <td><%=  ukraine.destroyed  %></td>
+              </tr>
+            <% }); %>
+                
+          </table>
     </div>
     
     

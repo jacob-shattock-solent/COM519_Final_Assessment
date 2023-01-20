@@ -30,6 +30,11 @@
     <div class="row col-md-12 col-md-offset-2 custyle mx-auto">
         <h1 class="mx-auto"> Russia Losses</h1>
     <table class="table table-striped custab">
+
+
+    <td class="text-center"><a class='btn btn-success btn-xs' href="#"><span class="glyphicon glyphicon-create"></span> Create</a> <a class='btn btn-primary btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+
+      
     <thead>
         <tr>
             <th>Equipment</th>
@@ -40,14 +45,16 @@
 
         </tr>
     </thead>
-            <tr>
-                <td>Tanks</td>
-                <td>T-62 Obr. 1967</td>
-                <td></td>
-                <td>the Soviet Union</td>
-                <td>1</td>
-                <td class="text-center"><a class='btn btn-info btn-xs' href="#"><span class="glyphicon glyphicon-edit"></span> Edit</a> <a href="#" class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
-            </tr>
+      
+      <% russias.forEach(function(russia){ %>
+        <tr>
+          <td><%=  russia.equipment  %></td>
+          <td><%=  russia.model  %></td>
+          <td><%=  russia.losses_total  %></td>
+          <td><%=  russia.captured  %></td>
+          <td><%=  russia.destroyed  %></td>
+        </tr>
+      <% }); %>
           
     </table>
     </div>
